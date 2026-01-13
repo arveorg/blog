@@ -1,0 +1,13 @@
+{{ define "main" }}
+  {{ .Content }}
+  {{ range first 5 (where site.RegularPages "Section" "posts") }}
+  <article>
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <div class="time">{{ partial "date.html" .Date }}</div>
+    {{ .Content }}
+  </article>
+  {{ end }}
+  <div class="terminal-nav">
+    {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+  </div>
+{{ end }}

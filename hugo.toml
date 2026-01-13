@@ -1,0 +1,45 @@
+baseURL = 'https://arve.org/'
+languageCode = 'en-us'
+title = 'arve.org'
+theme = "shibui"
+enableGitInfo = true
+
+[params.author]
+name = "arve"
+email = "github@arve.org"
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    noClasses = true
+    tabWidth = 4
+    style = "algol_nu"
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+    ordered = true
+
+[menu]
+  [[menu.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 1
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+
+[build]
+  writeStats = true
+
+[frontmatter]
+  date = ['date', 'publishDate', 'lastmod']
+  expiryDate = ['expiryDate']
+  lastmod = [':git', 'lastmod', 'date', 'publishDate']
+  publishDate = ['publishDate', 'date']
