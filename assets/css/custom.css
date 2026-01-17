@@ -5,3 +5,8 @@ h4::before,
 h5::before {
   content: none !important;
 }
+
+/* Lowercase text */
+body {
+  text-transform: lowercase;
+}
