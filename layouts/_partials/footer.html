@@ -1,0 +1,19 @@
+<p>
+  &copy; Copyright {{ now.Year }} &middot;
+  <a href="https://github.com/ntk148v/shibui">shibui</a>
+</p>
+<div class="img-modal" id="imgModal">
+  <img id="imgModalSrc" src="" alt="">
+</div>
+<script>
+document.addEventListener('click', function(e) {
+  if (e.target.tagName === 'IMG' && (e.target.closest('article') || e.target.closest('main'))) {
+    var modal = document.getElementById('imgModal');
+    document.getElementById('imgModalSrc').src = e.target.src;
+    modal.classList.add('active');
+  }
+});
+document.getElementById('imgModal').addEventListener('click', function() {
+  this.classList.remove('active');
+});
+</script>
